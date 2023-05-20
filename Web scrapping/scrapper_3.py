@@ -26,9 +26,8 @@ links = [
     'https://medicine.uiowa.edu/iowaprotocols/oral-cavity-and-oropharynx-protocols',
     'https://medicine.uiowa.edu/iowaprotocols/oral-cavity-and-oropharynx-protocols'
 ]
-
 # Create the folder to store the documents
-folder_name = "Iowa Head and Neck Protocols (uiowa.edu)"
+folder_name = "Iowa Head and Neck Protocols (uiowa.edu)/PDF"
 os.makedirs(folder_name, exist_ok=True)
 
 # Loop through each link and scrape its content
@@ -74,5 +73,5 @@ for link in links:
             doc.add_paragraph(element.text)
 
     # Save the document to disk within the folder
-    filename = os.path.join(folder_name, link.split('/')[-1] + '.doc')
+    filename = os.path.join(folder_name, link.split('/')[-1] + '.pdf')
     doc.save(filename)
